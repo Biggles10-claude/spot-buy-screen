@@ -151,7 +151,9 @@
       "price_note": "Yahoo",
       "last_price": 47.755,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "SHORT",
@@ -172,7 +174,9 @@
       "price_note": "CoinGecko",
       "last_price": 2683.11,
       "price_currency": "USD",
-      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)"
+      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "SHORT",
@@ -192,7 +196,9 @@
       "price_note": "CoinGecko",
       "last_price": 117.35,
       "price_currency": "USD",
-      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)"
+      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)",
+      "confidence_original": "Low",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "SHORT",
@@ -212,7 +218,9 @@
       "price_note": "Yahoo",
       "last_price": 330.665,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "SHORT",
@@ -232,7 +240,9 @@
       "price_note": "Yahoo",
       "last_price": 728.625,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "MEDIUM",
@@ -252,7 +262,9 @@
       "price_note": "Yahoo",
       "last_price": 514.364,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "High",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "MEDIUM",
@@ -272,7 +284,9 @@
       "price_note": "Yahoo",
       "last_price": 340.11,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "MEDIUM",
@@ -292,7 +306,9 @@
       "price_note": "Yahoo",
       "last_price": 1006.891,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Low",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "MEDIUM",
@@ -312,7 +328,9 @@
       "price_note": "Yahoo",
       "last_price": 230.505,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "MEDIUM",
@@ -323,7 +341,7 @@
       "risks": "Gold price drawdown; cost inflation at mines; jurisdictional risk; opportunity cost if real yields spike.",
       "invalidation": "Sustained break in gold\u2019s medium-term uptrend with rising real yields (monitor real 10y) plus company guidance cut on AISC.",
       "sizing": "1\u20133%",
-      "confidence": "Med",
+      "confidence": "Low",
       "sources": [
         "https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings",
         "https://query1.finance.yahoo.com/v8/finance/chart/NEM",
@@ -332,7 +350,9 @@
       "price_note": "Yahoo",
       "last_price": 115.31,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "LONG",
@@ -343,7 +363,7 @@
       "risks": "Export controls to China; order cyclicality; EUR/USD; customer capex pauses.",
       "invalidation": "Multi-quarter booked backlog collapse or credible competing EUV alternative reaching HVM (monitor ASML order/bookings releases).",
       "sizing": "2\u20134%",
-      "confidence": "Med",
+      "confidence": "Low",
       "sources": [
         "https://query1.finance.yahoo.com/v8/finance/chart/ASML",
         "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf",
@@ -352,7 +372,9 @@
       "price_note": "Yahoo",
       "last_price": 1803.205,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "LONG",
@@ -363,7 +385,7 @@
       "risks": "Taiwan geopolitics; customer concentration (NVDA/Apple ecosystem); capex intensity; FX.",
       "invalidation": "Sustained utilization collapse in advanced nodes or material escalation risk that impairs fab ops (company disclosures / credible government advisories).",
       "sizing": "2\u20134%",
-      "confidence": "Med",
+      "confidence": "Low",
       "sources": [
         "https://query1.finance.yahoo.com/v8/finance/chart/TSM",
         "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf"
@@ -371,7 +393,9 @@
       "price_note": "Yahoo",
       "last_price": 455.86,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "LONG",
@@ -392,7 +416,9 @@
       "price_note": "CoinGecko",
       "last_price": 84305,
       "price_currency": "USD",
-      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)"
+      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "LONG",
@@ -403,7 +429,7 @@
       "risks": "China demand; regulatory App Store; innovation cadence; rich absolute multiple.",
       "invalidation": "Services growth turning negative YoY for two consecutive quarters without buyback/capital-return offset thesis change.",
       "sizing": "3\u20135%",
-      "confidence": "High",
+      "confidence": "Med",
       "sources": [
         "https://13f.finance/fund/berkshire-hathaway",
         "https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026",
@@ -412,7 +438,9 @@
       "price_note": "Yahoo",
       "last_price": 328.173,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "High",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     },
     {
       "horizon": "LONG",
@@ -423,7 +451,7 @@
       "risks": "China steel demand; commodity price cycles; operational incidents; AUD/USD.",
       "invalidation": "Multi-year copper/iron price regime break with company cutting growth capex and dividends simultaneously (read BHP results releases).",
       "sizing": "2\u20134%",
-      "confidence": "Med",
+      "confidence": "Low",
       "sources": [
         "https://query1.finance.yahoo.com/v8/finance/chart/BHP",
         "https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings",
@@ -432,12 +460,21 @@
       "price_note": "Yahoo",
       "last_price": 83.82,
       "price_currency": "USD",
-      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "confidence_original": "Med",
+      "confidence_basis": "audit artifact-depth 2026-10-02 07:16 AWST"
     }
   ],
   "mix": {
     "equities_etf": 11,
     "crypto": 4,
     "note": "~73% equity/ETF / ~27% crypto across 15 picks"
+  },
+  "audit": {
+    "timestamp_awst": "2026-10-02 07:16 AWST",
+    "score": 4.5,
+    "thorough": false,
+    "critical_gaps": 5,
+    "audit_path": "research/AUDIT.md"
   }
 }

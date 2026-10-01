@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Spot Buy Screen — Top 5 × 3 horizons</title>
+<title>Spot Buy Screen — Audit + Research Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
@@ -21,16 +21,41 @@ body {
 }
 .wrap { max-width:1100px; margin:0 auto; padding:1.5rem 1.25rem 3rem; }
 h1 { font-family:"Source Serif 4", Georgia, serif; font-weight:600; font-size:clamp(1.6rem,3vw,2.2rem); margin:0 0 .35rem; }
-.meta { color:var(--muted); font-size:.92rem; margin-bottom:1.25rem; }
+h2 { font-family:"Source Serif 4", Georgia, serif; font-size:1.35rem; margin:2rem 0 .75rem; }
+.meta { color:var(--muted); font-size:.92rem; margin-bottom:1rem; }
 .disclaimer {
   background:#fff8f0; border:1px solid var(--line); border-left:3px solid var(--accent);
   padding:.85rem 1rem; border-radius:8px; font-size:.92rem; color:var(--muted); margin-bottom:1.25rem;
 }
-.themes { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:1rem 1.15rem; margin-bottom:1.25rem; }
-.themes h2 { margin:0 0 .5rem; font-size:1rem; letter-spacing:.02em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.sticky-nav {
+  position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:.4rem;
+  background:rgba(247,246,243,.94); backdrop-filter:blur(8px); padding:.55rem 0; margin-bottom:1rem;
+  border-bottom:1px solid var(--line);
+}
+.sticky-nav a {
+  text-decoration:none; color:var(--ink); font-size:.85rem; font-weight:500;
+  border:1px solid var(--line); background:var(--surface); border-radius:999px;
+  padding:.45rem .85rem; min-height:44px; display:inline-flex; align-items:center;
+}
+.sticky-nav a:hover { border-color:var(--accent); color:var(--accent); }
+.audit-strip {
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:1.1rem 1.2rem; margin-bottom:1.25rem;
+}
+.audit-strip h2 { margin:0 0 .75rem; font-size:1.1rem; }
+.kpi { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:.75rem; }
+.kpi div { background:#faf9f6; border:1px solid var(--line); border-radius:10px; padding:.75rem .9rem; }
+.kpi b { display:block; font-size:1.25rem; }
+.kpi span { color:var(--muted); font-size:.78rem; }
+.kpi .bad-t { color:var(--bad); }
+.kpi .ok-t { color:var(--ok); }
+.themes, .section-card {
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:1rem 1.15rem; margin-bottom:1.25rem;
+}
+.themes h2, .section-card h2 { margin:0 0 .5rem; font-size:1rem; letter-spacing:.02em; text-transform:uppercase; color:var(--muted); font-weight:600; font-family:"IBM Plex Sans",sans-serif; }
 .themes ul { margin:.25rem 0 0; padding-left:1.1rem; }
-.chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 1.25rem; position:sticky; top:0; z-index:5;
-  background:rgba(247,246,243,.92); backdrop-filter:blur(8px); padding:.65rem 0; }
+.chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 1.25rem; }
 .chip {
   appearance:none; border:1px solid var(--line); background:var(--surface); color:var(--ink);
   border-radius:999px; padding:.55rem 1rem; font:inherit; font-weight:500; cursor:pointer; min-height:44px;
@@ -53,38 +78,82 @@ h1 { font-family:"Source Serif 4", Georgia, serif; font-weight:600; font-size:cl
 .badge.conf-high { background:#dcefe4; color:var(--ok); }
 .badge.conf-med { background:#f3ebd9; color:var(--warn); }
 .badge.conf-low { background:#f3e0e0; color:var(--bad); }
-.price { font-weight:600; margin:.25rem 0 .5rem; }
-.price .muted, .muted { color:var(--muted); font-weight:400; font-size:.85rem; }
+.price { font-weight:600; margin:.25rem 0 .35rem; }
+.muted, .price .muted { color:var(--muted); font-weight:400; font-size:.85rem; }
+.conf-why { font-size:.85rem; margin:0 0 .25rem; }
 .card h3 { margin:.55rem 0 .15rem; font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
 .card p { margin:0; font-family:"Source Serif 4", Georgia, serif; font-size:.98rem; }
 .sources { margin:.2rem 0 0; padding-left:1rem; font-size:.8rem; word-break:break-all; }
 .sources a { color:var(--accent); }
+details.pipe {
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:.65rem 1rem; margin:.5rem 0;
+}
+details.pipe summary {
+  cursor:pointer; font-weight:600; min-height:44px; display:flex; align-items:center;
+}
+pre.artifact {
+  white-space:pre-wrap; word-break:break-word; font-size:.78rem; line-height:1.45;
+  background:#faf9f6; border:1px solid var(--line); border-radius:8px; padding:.75rem;
+  max-height:280px; overflow:auto; margin:.5rem 0 0;
+}
+.gap-list { margin:0; padding-left:1.15rem; }
+.gap-list li { margin:.4rem 0; }
+table.conf { width:100%; border-collapse:collapse; font-size:.88rem; margin-top:.5rem; }
+table.conf th, table.conf td { border-bottom:1px solid var(--line); text-align:left; padding:.45rem .35rem; vertical-align:top; }
+table.conf th { color:var(--muted); font-weight:600; font-size:.75rem; text-transform:uppercase; letter-spacing:.04em; }
 footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
-.kpi { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:.75rem; margin-bottom:1.25rem; }
-.kpi div { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:.75rem .9rem; }
-.kpi b { display:block; font-size:1.2rem; }
-.kpi span { color:var(--muted); font-size:.8rem; }
+@media (max-width:560px) {
+  .wrap { padding:1rem .9rem 2.5rem; }
+  .grid { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
 <main class="wrap">
   <h1>Spot Buy Screen — Top 5 × 3 horizons</h1>
-  <p class="meta">Generated Fri 2 Oct 2026 · Australia/Perth (AWST) · Account research board for Biggles · Not financial advice</p>
-  <div class="disclaimer">
+  <p class="meta">Research board for Biggles · Prices as-of Fri 2 Oct 2026 ~00:26 AWST · Audit 2 Oct 2026 07:16 AWST · <strong>Not financial advice</strong></p>
+
+  <div class="disclaimer" id="disclaimer">
     <strong>Disclaimer:</strong> This page is an informational research artifact only. It is <em>not</em> financial, investment, tax, or legal advice.
     Do your own due diligence. Past performance and illustrative scenarios do not guarantee future results. Crypto and equities can lose principal.
-    Live prices shown were fetched from Yahoo Finance and/or CoinGecko at generation time — they go stale; never invent numbers.
+    Live prices shown were fetched from Yahoo Finance and/or CoinGecko at generation time (2026-10-02 ~00:26 AWST) — they go stale; never invent numbers.
+    Filing figures labeled secondary were not fetched live from EDGAR (HTTP 403 from research box).
   </div>
-  <div class="kpi">
-    <div><b>15</b><span>picks (5 × 3)</span></div>
-    <div><b>~73 / 27</b><span>equity-ETF % / crypto %</span></div>
-    <div><b>EDGAR</b><span>blocked from box — IR/Yahoo/13F secondary used</span></div>
-    <div><b>Fed</b><span>27–28 Oct 2026 catalyst window</span></div>
-  </div>
-  <section class="themes">
+
+  <nav class="sticky-nav" aria-label="Section nav">
+    <a href="#audit">Audit</a>
+    <a href="#themes">Themes</a>
+    <a href="#picks">Picks</a>
+    <a href="#pipeline">Pipeline</a>
+    <a href="#gaps">Gaps</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
+  <section class="audit-strip" id="audit">
+    <h2>Audit verdict</h2>
+    <div class="kpi">
+      <div><b class="bad-t">4.5 / 10</b><span>thoroughness score</span></div>
+      <div><b class="bad-t">No</b><span>thorough? (honest)</span></div>
+      <div><b>5</b><span>critical gaps</span></div>
+      <div><b>15</b><span>picks (5 × 3)</span></div>
+      <div><b>~73 / 27</b><span>equity-ETF % / crypto %</span></div>
+      <div><b>07:16 AWST</b><span>audit timestamp 2026-10-02</span></div>
+    </div>
+    <p style="margin:1rem 0 0; font-family:'Source Serif 4',Georgia,serif; font-size:.98rem;">
+      Pipeline ran STEPs 1–7 and documented blockers, but <strong>primary EDGAR filings were unreachable</strong>,
+      DCF is incomplete (scenarios only), ratios cover only NVDA+MSFT, Berkshire 13F is secondary-aggregator only,
+      and EQIX/ASML/TSM/NEM/BHP/SOL lack deep company artifacts. Full write-up: <code>research/AUDIT.md</code>.
+    </p>
+  </section>
+
+  <section class="themes" id="themes">
     <h2>Oct 2026 themes</h2>
     <ul><li><strong>AI infra / semis / power</strong> — Strong capex narrative but SOXX weak Q3 — size carefully</li><li><strong>Rates path (Fed 27–28 Oct, RBA 4.60%)</strong> — Sticky inflation; data-dependent</li><li><strong>Crypto spot ETF flows</strong> — BTC streak ended 1 Oct; still structural plumbing</li><li><strong>AU resources / gold inflation hedge</strong> — NEM/BHP diversifiers</li><li><strong>Quality mega-caps (Berkshire book)</strong> — AAPL core; GOOGL add in Q2 2026 13F</li></ul>
   </section>
+
+  <h2 id="picks">Pick cards</h2>
+  <p class="meta">Confidence badges are <strong>audit depth</strong> (artifacts on disk), not forecasts. Prices preserved from original publish — not re-fetched this audit pass.</p>
   <div class="chips" role="tablist" aria-label="Horizon filter">
     <button class="chip" type="button" data-filter="ALL" aria-pressed="true">All</button>
     <button class="chip" type="button" data-filter="SHORT" aria-pressed="false">SHORT (~1–4 weeks)</button>
@@ -92,8 +161,8 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <button class="chip" type="button" data-filter="LONG" aria-pressed="false">LONG (~1–3 years)</button>
   </div>
   <div class="grid" id="board">
-    
-  <article class="card" data-horizon="SHORT" data-asset="ETF">
+
+  <article class="card" data-horizon="SHORT" data-asset="ETF" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">IBIT</div>
@@ -102,10 +171,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">SHORT</span>
         <span class="badge asset">ETF</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$47.76 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$47.755 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Yahoo price + The Block ETF flow article + macro blog</p>
     <h3>Thesis</h3>
     <p>U.S. spot bitcoin ETF complex just ended a nine-day ~$3.1B inflow streak with a soft outflow day, while October’s Fed meeting (27–28 Oct) and CPI (14 Oct) dominate risk appetite. IBIT remains the most liquid listed vehicle for a tactical BTC sleeve without custody friction; use as a SHORT catalyst play on flow + rates repricing, not a multi-year conviction vehicle (use BTC spot for LONG).</p>
     <h3>Key risks</h3>
@@ -114,10 +184,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Sustained multi-day net outflows across U.S. spot BTC ETFs alongside a decisive break of recent BTC range lows (monitor CoinGlass/The Block flow dashboards).</p>
     <h3>Sizing</h3>
     <p>1–2% starter (tactical)</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/IBIT.json</code></li><li><code>research/picks.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384" target="_blank" rel="noopener">https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384</a></li><li><a href="https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/" target="_blank" rel="noopener">https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/IBIT" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/IBIT</a></li></ul>
   </article>
-  <article class="card" data-horizon="SHORT" data-asset="crypto">
+  <article class="card" data-horizon="SHORT" data-asset="crypto" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">ETH</div>
@@ -126,10 +198,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">SHORT</span>
         <span class="badge asset">crypto</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$2,683.11 <span class="muted">USD · CoinGecko</span></div>
+    <div class="price">$2,683.11 <span class="muted">USD · CoinGecko · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> CoinGecko + Yahoo cross-check + flow/macro URLs</p>
     <h3>Thesis</h3>
     <p>Spot ETH ETFs recently flipped from a strong inflow streak to outflows, creating a tactical window if softer inflation data eases October hike odds. ETH remains the deepest smart-contract L1 with liquid spot + ETF wrappers; SHORT horizon leans on flow + macro catalysts rather than protocol roadmap.</p>
     <h3>Key risks</h3>
@@ -138,10 +211,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Another full week of combined U.S. spot ETH ETF net outflows with ETH underperforming BTC on a 1-week basis.</p>
     <h3>Sizing</h3>
     <p>1–2% starter</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/coingecko_prices.json</code></li><li><code>research/quotes/ETH-USD.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384" target="_blank" rel="noopener">https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384</a></li><li><a href="https://api.coingecko.com/api/v3/simple/price?ids=ethereum&amp;vs_currencies=usd" target="_blank" rel="noopener">https://api.coingecko.com/api/v3/simple/price?ids=ethereum&amp;vs_currencies=usd</a></li><li><a href="https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/" target="_blank" rel="noopener">https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/</a></li></ul>
   </article>
-  <article class="card" data-horizon="SHORT" data-asset="crypto">
+  <article class="card" data-horizon="SHORT" data-asset="crypto" data-conf="Low">
     <header class="card-head">
       <div>
         <div class="ticker">SOL</div>
@@ -150,10 +225,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">SHORT</span>
         <span class="badge asset">crypto</span>
-        <span class="badge conf-low">Low</span>
+        <span class="badge conf-low">Conf Low</span>
       </div>
     </header>
-    <div class="price">$117.35 <span class="muted">USD · CoinGecko</span></div>
+    <div class="price">$117.35 <span class="muted">USD · CoinGecko · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> CoinGecko + Bitfinex macro only</p>
     <h3>Thesis</h3>
     <p>Major liquid L1 with high beta to crypto risk-on into October macro prints. Use only as a sized satellite to BTC/ETH for SHORT tactical exposure; liquidity is deep on major exchanges (CoinGecko tracked).</p>
     <h3>Key risks</h3>
@@ -162,10 +238,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Break of multi-week support with BTC stable (idiosyncratic underperformance &gt;15% vs BTC over 2 weeks) or major network halt headlines from official Solana status channels.</p>
     <h3>Sizing</h3>
     <p>0.5–1.5% speculative sleeve</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/coingecko_prices.json</code></li><li><code>research/quotes/SOL-USD.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://api.coingecko.com/api/v3/simple/price?ids=solana&amp;vs_currencies=usd" target="_blank" rel="noopener">https://api.coingecko.com/api/v3/simple/price?ids=solana&amp;vs_currencies=usd</a></li><li><a href="https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/" target="_blank" rel="noopener">https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/</a></li></ul>
   </article>
-  <article class="card" data-horizon="SHORT" data-asset="stock">
+  <article class="card" data-horizon="SHORT" data-asset="stock" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">JPM</div>
@@ -174,10 +252,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">SHORT</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$330.67 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$330.67 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Official IR earnings-call notice + Yahoo; no 10-Q deep dive</p>
     <h3>Thesis</h3>
     <p>Official IR: Q3 2026 results due ~7:00 a.m. ET Tuesday 13 Oct 2026 with call at 8:30 a.m. ET — a near-dated catalyst into bank NII/credit quality debate as rates stay elevated (RBA recently at 4.60%; Fed decision later in month). Liquid mega-cap financial for a SHORT event-driven sleeve.</p>
     <h3>Key risks</h3>
@@ -186,10 +265,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Material guidance cut on NII or sharp rise in credit costs on the 13 Oct release vs prior quarter trajectory (read the IR release, not headlines alone).</p>
     <h3>Sizing</h3>
     <p>2–3% starter</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/JPM.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.jpmorganchase.com/ir/news/2026/jpmc-to-host-third-quarter-2026-earnings-call" target="_blank" rel="noopener">https://www.jpmorganchase.com/ir/news/2026/jpmc-to-host-third-quarter-2026-earnings-call</a></li><li><a href="https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings" target="_blank" rel="noopener">https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/JPM" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/JPM</a></li></ul>
   </article>
-  <article class="card" data-horizon="SHORT" data-asset="stock">
+  <article class="card" data-horizon="SHORT" data-asset="stock" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">META</div>
@@ -198,10 +279,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">SHORT</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$728.62 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$728.62 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Secondary earnings calendars + Yahoo — confirm via Meta IR</p>
     <h3>Thesis</h3>
     <p>Next report clustered late October (calendars cite ~27–28 Oct) alongside FOMC — a high-beta AI/ads print after a Q2 miss left a lower bar. Liquid mega-cap for SHORT catalyst trading; size for gap risk.</p>
     <h3>Key risks</h3>
@@ -210,10 +292,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Confirm exact date via Meta IR closer to print; thesis voids if report slips past early November without a new confirmed date, or if pre-announcement warns on ads.</p>
     <h3>Sizing</h3>
     <p>1.5–3% starter</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/META.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.fxempire.com/stocks/meta/earnings" target="_blank" rel="noopener">https://www.fxempire.com/stocks/meta/earnings</a></li><li><a href="https://investingcalendar.com/country/united-states/earnings" target="_blank" rel="noopener">https://investingcalendar.com/country/united-states/earnings</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/META" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/META</a></li></ul>
   </article>
-  <article class="card" data-horizon="MEDIUM" data-asset="stock">
+  <article class="card" data-horizon="MEDIUM" data-asset="stock" data-conf="High">
     <header class="card-head">
       <div>
         <div class="ticker">MSFT</div>
@@ -222,10 +306,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">MEDIUM</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-high">High</span>
+        <span class="badge conf-high">Conf High</span>
       </div>
     </header>
-    <div class="price">$514.36 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$514.36 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> IR FY2026 PR + ratios + scenario model artifacts</p>
     <h3>Thesis</h3>
     <p>FY2026 IR results: revenue $331.8B (+18%), operating income $155.2B, GAAP NI $133.7B, diluted EPS $17.95. Cloud/AI capex cycle remains the structural bid even as rates stay sticky. Our illustrative 5y scenario table (skills/models) shows base-case earnings-power upside if mid-teens growth persists — MEDIUM horizon to let Azure/AI monetization compound past October macro noise.</p>
     <h3>Key risks</h3>
@@ -234,10 +319,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Two consecutive quarters of Intelligent Cloud growth decelerating sharply below mid-teens without offsetting margin expansion (check future IR releases).</p>
     <h3>Sizing</h3>
     <p>3–5% core</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>skills/sec-filings/MSFT_SUMMARY.md</code></li><li><code>skills/ratios/RATIOS.md</code></li><li><code>skills/models/SCENARIO_DCF.md</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast" target="_blank" rel="noopener">https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/MSFT" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/MSFT</a></li></ul>
   </article>
-  <article class="card" data-horizon="MEDIUM" data-asset="stock">
+  <article class="card" data-horizon="MEDIUM" data-asset="stock" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">GOOGL</div>
@@ -246,10 +333,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">MEDIUM</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$340.11 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$340.11 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> BRK Q2 add in 13F summary (secondary); Yahoo price</p>
     <h3>Thesis</h3>
     <p>Berkshire Q2 2026 13F (filed ~14 Aug 2026) showed a large add to Alphabet (GOOGL/GOOG), with reportable portfolio ~$299.25B. Search/YouTube/Cloud cash engine plus AI distribution is a MEDIUM-quality compounder with fresh mega-manager sponsorship — useful diversification vs pure semis.</p>
     <h3>Key risks</h3>
@@ -258,10 +346,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Sustained Search revenue decline in consecutive 10-Qs or adverse final antitrust remedy that structurally caps Chrome/Search distribution (watch DOJ case outcomes / 8-Ks).</p>
     <h3>Sizing</h3>
     <p>2–4%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>skills/13f/BRK_Q2_2026_SUMMARY.md</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://13f.finance/fund/berkshire-hathaway" target="_blank" rel="noopener">https://13f.finance/fund/berkshire-hathaway</a></li><li><a href="https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026" target="_blank" rel="noopener">https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026</a></li><li><a href="https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/" target="_blank" rel="noopener">https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/</a></li></ul>
   </article>
-  <article class="card" data-horizon="MEDIUM" data-asset="stock">
+  <article class="card" data-horizon="MEDIUM" data-asset="stock" data-conf="Low">
     <header class="card-head">
       <div>
         <div class="ticker">EQIX</div>
@@ -270,10 +360,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">MEDIUM</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-low">Low</span>
+        <span class="badge conf-low">Conf Low</span>
       </div>
     </header>
-    <div class="price">$1,006.89 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$1,006.89 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> EQIX_SUMMARY Low; IR 404; EDGAR stubs; Yahoo price only</p>
     <h3>Thesis</h3>
     <p>Listed data-center platform exposed to AI/cloud interconnection demand called out in Oct 2026 AU/global digital-infra commentary. Liquid large-cap way to own power/space scarcity without single-tenant hyperscale idiosyncratic risk. Fundamentals deep-dive limited by EDGAR block — treat as theme sleeve with Med/Low filing confidence.</p>
     <h3>Key risks</h3>
@@ -282,10 +373,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Two quarters of deteriorating bookings/utilization commentary on earnings calls or equity raise at punitive terms.</p>
     <h3>Sizing</h3>
     <p>1–3%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>skills/sec-filings/EQIX_SUMMARY.md</code></li><li><code>skills/sec-filings/BLOCKER.md</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings" target="_blank" rel="noopener">https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/EQIX" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/EQIX</a></li><li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf" target="_blank" rel="noopener">https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf</a></li></ul>
   </article>
-  <article class="card" data-horizon="MEDIUM" data-asset="stock">
+  <article class="card" data-horizon="MEDIUM" data-asset="stock" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">NVDA</div>
@@ -294,10 +387,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">MEDIUM</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$230.50 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$230.50 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Secondary 10-K/10-Q excerpts + ratios + scenarios (EDGAR not live)</p>
     <h3>Thesis</h3>
     <p>Verified growth machine: FY2026 revenue ~$215.9B / NI ~$120.1B (secondary 10-K snapshot); Q2 (ended 26 Jul 2026) revenue $96.2B vs $46.7B prior-year quarter (10-Q table excerpt). MEDIUM horizon to ride AI compute demand while acknowledging SOXX’s weak Q3 and valuation/“power-hungry chip” skepticism. Size below MSFT given multiple risk.</p>
     <h3>Key risks</h3>
@@ -306,10 +400,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Quarterly revenue decline QoQ (ex-seasonality) or data-center gross margin collapse disclosed in next 10-Q/earnings 8-K.</p>
     <h3>Sizing</h3>
     <p>2–4%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>skills/sec-filings/NVDA_SUMMARY.md</code></li><li><code>skills/ratios/RATIOS.md</code></li><li><code>skills/models/SCENARIO_DCF.md</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm</a></li><li><a href="https://app.edgar.tools/filing/1045810/0001045810-26-000021" target="_blank" rel="noopener">https://app.edgar.tools/filing/1045810/0001045810-26-000021</a></li><li><a href="https://investor.nvidia.com/financial-info/sec-filings/default.aspx" target="_blank" rel="noopener">https://investor.nvidia.com/financial-info/sec-filings/default.aspx</a></li></ul>
   </article>
-  <article class="card" data-horizon="MEDIUM" data-asset="stock">
+  <article class="card" data-horizon="MEDIUM" data-asset="stock" data-conf="Low">
     <header class="card-head">
       <div>
         <div class="ticker">NEM</div>
@@ -318,10 +414,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">MEDIUM</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-low">Conf Low</span>
       </div>
     </header>
-    <div class="price">$115.31 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$115.31 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Yahoo + CMC/OCBC theme PDFs only</p>
     <h3>Thesis</h3>
     <p>Liquid gold major as a MEDIUM inflation/geopolitical hedge while RBA cash rate sits at 4.60% (Sep 2026 hike) and global energy/geopolitics remain choppy. Diversifies the board away from pure tech/crypto beta.</p>
     <h3>Key risks</h3>
@@ -330,10 +427,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Sustained break in gold’s medium-term uptrend with rising real yields (monitor real 10y) plus company guidance cut on AISC.</p>
     <h3>Sizing</h3>
     <p>1–3%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/NEM.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings" target="_blank" rel="noopener">https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/NEM" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/NEM</a></li><li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf" target="_blank" rel="noopener">https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf</a></li></ul>
   </article>
-  <article class="card" data-horizon="LONG" data-asset="stock">
+  <article class="card" data-horizon="LONG" data-asset="stock" data-conf="Low">
     <header class="card-head">
       <div>
         <div class="ticker">ASML</div>
@@ -342,10 +441,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">LONG</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-low">Conf Low</span>
       </div>
     </header>
-    <div class="price">$1,803.20 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$1,803.20 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Yahoo + OCBC/SOXX commentary; no primary orders artifact</p>
     <h3>Thesis</h3>
     <p>EUV lithography bottleneck for advanced nodes — structural LONG pick on AI/semicap cycle despite near-term SOXX volatility. Liquid ADR; thesis is multi-year capacity/tool demand, not October trading.</p>
     <h3>Key risks</h3>
@@ -354,10 +454,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Multi-quarter booked backlog collapse or credible competing EUV alternative reaching HVM (monitor ASML order/bookings releases).</p>
     <h3>Sizing</h3>
     <p>2–4%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/ASML.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/ASML" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/ASML</a></li><li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf" target="_blank" rel="noopener">https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf</a></li><li><a href="https://stocktwits.com/news-articles/markets/equity/soxx-worst-quarter-over-year-michael-burry-1880-ai-power-chip-race/cZDixccRBi9" target="_blank" rel="noopener">https://stocktwits.com/news-articles/markets/equity/soxx-worst-quarter-over-year-michael-burry-1880-ai-power-chip-race/cZDixccRBi9</a></li></ul>
   </article>
-  <article class="card" data-horizon="LONG" data-asset="stock">
+  <article class="card" data-horizon="LONG" data-asset="stock" data-conf="Low">
     <header class="card-head">
       <div>
         <div class="ticker">TSM</div>
@@ -366,10 +468,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">LONG</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-low">Conf Low</span>
       </div>
     </header>
-    <div class="price">$455.86 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$455.86 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Yahoo + OCBC PDF; no TSMC filings in repo</p>
     <h3>Thesis</h3>
     <p>Foundry backbone for leading-edge AI accelerators — LONG structural compounder paired with ASML. Liquid ADR; geopolitics is the permanent risk premium.</p>
     <h3>Key risks</h3>
@@ -378,10 +481,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Sustained utilization collapse in advanced nodes or material escalation risk that impairs fab ops (company disclosures / credible government advisories).</p>
     <h3>Sizing</h3>
     <p>2–4%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/TSM.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/TSM" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/TSM</a></li><li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf" target="_blank" rel="noopener">https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf</a></li></ul>
   </article>
-  <article class="card" data-horizon="LONG" data-asset="crypto">
+  <article class="card" data-horizon="LONG" data-asset="crypto" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">BTC</div>
@@ -390,10 +495,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">LONG</span>
         <span class="badge asset">crypto</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$84305 <span class="muted">USD · CoinGecko</span></div>
+    <div class="price">$84,305.00 <span class="muted">USD · CoinGecko · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> CoinGecko + Yahoo + ETF flow article</p>
     <h3>Thesis</h3>
     <p>Multi-year monetary/network asset with U.S. spot ETF plumbing now mature; October flow noise is SHORT/MEDIUM, but LONG thesis is structural adoption + scarcity. Prefer spot (or IBIT for brokerage convenience) with small core size given volatility.</p>
     <h3>Key risks</h3>
@@ -402,10 +508,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Structural ban or sustained ETF AUM collapse with loss of institutional access rails (not a single down week).</p>
     <h3>Sizing</h3>
     <p>2–5% core crypto</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/coingecko_prices.json</code></li><li><code>research/quotes/BTC-USD.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&amp;vs_currencies=usd" target="_blank" rel="noopener">https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&amp;vs_currencies=usd</a></li><li><a href="https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384" target="_blank" rel="noopener">https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384</a></li><li><a href="https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/" target="_blank" rel="noopener">https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/</a></li></ul>
   </article>
-  <article class="card" data-horizon="LONG" data-asset="stock">
+  <article class="card" data-horizon="LONG" data-asset="stock" data-conf="Med">
     <header class="card-head">
       <div>
         <div class="ticker">AAPL</div>
@@ -414,10 +522,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">LONG</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-high">High</span>
+        <span class="badge conf-med">Conf Med</span>
       </div>
     </header>
-    <div class="price">$328.17 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$328.17 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> BRK 13F secondary multi-aggregator; no Apple IR deep dive in repo</p>
     <h3>Thesis</h3>
     <p>Berkshire’s largest 13F line (~$66B / ~22% of reportable book in Q2 2026) anchors a LONG quality compounder with fortress balance sheet and services mix. Lower AI-capex beta than NVDA; suitable multi-year core.</p>
     <h3>Key risks</h3>
@@ -426,10 +535,12 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Services growth turning negative YoY for two consecutive quarters without buyback/capital-return offset thesis change.</p>
     <h3>Sizing</h3>
     <p>3–5%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>skills/13f/BRK_Q2_2026_SUMMARY.md</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://13f.finance/fund/berkshire-hathaway" target="_blank" rel="noopener">https://13f.finance/fund/berkshire-hathaway</a></li><li><a href="https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026" target="_blank" rel="noopener">https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026</a></li><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/AAPL" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/AAPL</a></li></ul>
   </article>
-  <article class="card" data-horizon="LONG" data-asset="stock">
+  <article class="card" data-horizon="LONG" data-asset="stock" data-conf="Low">
     <header class="card-head">
       <div>
         <div class="ticker">BHP</div>
@@ -438,10 +549,11 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
       <div class="badges">
         <span class="badge hz">LONG</span>
         <span class="badge asset">stock</span>
-        <span class="badge conf-med">Med</span>
+        <span class="badge conf-low">Conf Low</span>
       </div>
     </header>
-    <div class="price">$83.82 <span class="muted">USD · Yahoo</span></div>
+    <div class="price">$83.82 <span class="muted">USD · Yahoo · as-of 2026-10-02 ~00:26 AWST</span></div>
+    <p class="conf-why muted"><strong>Confidence basis:</strong> Yahoo + CMC/OCBC theme PDFs only</p>
     <h3>Thesis</h3>
     <p>Liquid diversified miner (NYSE ADR / dual-listed heritage) for LONG exposure to copper/iron ore and energy-transition materials alongside AU macro. Diversifies tech/crypto-heavy board; commodity cycles require patience.</p>
     <h3>Key risks</h3>
@@ -450,15 +562,264 @@ footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); co
     <p>Multi-year copper/iron price regime break with company cutting growth capex and dividends simultaneously (read BHP results releases).</p>
     <h3>Sizing</h3>
     <p>2–4%</p>
+    <h3>Skill artifacts used</h3>
+    <ul class="sources"><li><code>research/quotes/BHP.json</code></li></ul>
     <h3>Sources</h3>
     <ul class="sources"><li><a href="https://query1.finance.yahoo.com/v8/finance/chart/BHP" target="_blank" rel="noopener">https://query1.finance.yahoo.com/v8/finance/chart/BHP</a></li><li><a href="https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings" target="_blank" rel="noopener">https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings</a></li><li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf" target="_blank" rel="noopener">https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf</a></li></ul>
   </article>
   </div>
-  <footer>
-    <p>Method notes: analyst-kit-core onboarded; sec-filings/13f attempted against SEC EDGAR (HTTP 403 Akamai from this egress) — artifacts under repo <code>skills/</code>.
-    Ratios for MSFT/NVDA and illustrative scenario tables in <code>skills/ratios/</code> and <code>skills/models/</code>.
-    Primary/official links preferred; 13F holdings from aggregators citing accession 0001193125-26-352200.</p>
-    <p>Repo: spot-buy-screen · Publisher: Biggles10-claude via GitHub Pages</p>
+
+  <h2 id="pipeline">Pipeline log</h2>
+  <div class="section-card">
+    <p class="meta" style="margin-top:0">Each STEP from STATUS.md plus what each skill folder produced (real excerpts — not invented).</p>
+    <details class="pipe" open>
+      <summary>STATUS.md (STEPS 1–7)</summary>
+      <pre class='artifact'># STATUS
+2026-10-02 00:20 AWST | STEP1 analyst-kit-core: ONBOARDED=yes, MISSING_KEYS=none, identity=biggles10-claude@users.noreply.github.com, gh=Biggles10-claude
+2026-10-02 00:21 AWST | STEP2 sec-filings: EDGAR 403 from box egress (Akamai undeclared automated tool). Documented blocker; falling back to IR/Yahoo/WebSearch. Targets: NVDA MSFT EQIX.
+2026-10-02 00:22 AWST | STEP2b sec-filings artifacts: NVDA/MSFT/EQIX summaries + Yahoo prices saved under skills/sec-filings/ (EDGAR still 403).
+2026-10-02 00:22 AWST | STEP3 13f: Berkshire Q2 2026 summary from secondary aggregators (accession 0001193125-26-352200; value $299.25B). EDGAR fetch failed.
+2026-10-02 00:23 AWST | STEP4 ratios: NVDA+MSFT margins/P/E/P/S from IR+Yahoo written to skills/ratios/.
+2026-10-02 00:23 AWST | STEP5 models: MSFT+NVDA 5y scenario earnings tables in skills/models/ (DCF incomplete — missing FCF/WACC/XBRL).
+2026-10-02 00:24 AWST | STEP6 picks+HTML: 15 picks written; index.html built.
+2026-10-02 00:26 AWST | STEP7 publish: LIVE https://biggles10-claude.github.io/spot-buy-screen/ HTTP=200 pages_status=built
+</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP2 sec-filings — BLOCKER.md (EDGAR 403)</summary>
+      <pre class='artifact'># SEC EDGAR blocker (2026-10-02 AWST)
+
+All requests to sec.gov / data.sec.gov / efts.sec.gov from this box return **HTTP 403**
+(Akamai: &quot;Your Request Originates from an Undeclared Automated Tool&quot;), including:
+- `python3 edgar.py` with `SEC_EDGAR_UA=&quot;BigglesResearch biggles10-claude@users.noreply.github.com&quot;`
+- curl with proper User-Agent + Accept
+- google-chrome --headless dump-dom
+
+Workaround used: public IR pages, Yahoo Finance quote/filings pages, WebSearch
+summaries that cite EDGAR accession/date, CoinGecko for crypto. Filing *lists*
+and financial figures below are only those verified from non-SEC public pages or
+explicitly labeled as secondary. No invented numbers.
+</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP2 — NVDA_SUMMARY.md</summary>
+      <pre class='artifact'># NVDA SEC filings summary (secondary / IR — live EDGAR blocked)
+
+Sources:
+- NVIDIA IR SEC Filings page (HTTP 200): https://investor.nvidia.com/financial-info/sec-filings/default.aspx
+- EDGAR index (cited via WebSearch, not fetched live): accession 0001045810-26-000021
+- NVIDIA Q2 FY2027 10-Q primary doc URL (cited): https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm
+- FY2026 results IR PR: https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx
+- edgar.tools snapshot of 10-K (secondary): https://app.edgar.tools/filing/1045810/0001045810-26-000021
+
+Verified facts (label confidence):
+| Item | Value | Source confidence |
+|---|---|---|
+| CIK | 0001045810 | Public / known |
+| Latest 10-K filed | 2026-02-25 | EDGAR index via WebSearch + NVIDIA IR filing details |
+| 10-K period end | 2026-01-25 | EDGAR index |
+| FY2026 revenue | $215.9B | edgar.tools / IR context (Med — secondary parse) |
+| FY2026 net income | $120.1B | edgar.tools (Med — secondary) |
+| FY2026 total assets | $206.8B | edgar.tools (Med) |
+| Latest 10-Q period | quarter ended 2026-07-26 | SEC 10-Q HTML excerpt via WebSearch |
+| Q2 revenue (3mo ended Jul 26, 2026) | $96,221 million | Direct table excerpt from 10-Q via WebSearch (High for that figure) |
+| Prior-year Q2 revenue | $46,743 million | Same 10-Q table |
+| H1 FY2027 revenue | $177,837 million | Same 10-Q table |
+
+Live Yahoo Finance chart meta (fetched 2026-10-02 AWST from query1.finance.yahoo.com):
+- regularMarketPrice: see NVDA_yahoo_chart.json
+</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP2 — MSFT_SUMMARY.md</summary>
+      <pre class='artifact'># MSFT SEC filings summary (secondary — live EDGAR blocked)
+
+| Item | Value | Source |
+|---|---|---|
+| CIK | 0000789019 | Public |
+| Latest 10-K filed | 2026-07-29 | EDGAR index via WebSearch: accession 0001193125-26-323660 |
+| 10-K period end | 2026-06-30 | Same |
+| FY2026 revenue | $331.8B (+18% YoY) | Microsoft IR FY26 Q4 press release |
+| FY2026 operating income | $155.2B (+21%) | Same IR PR |
+| FY2026 GAAP net income | $133.7B (+31%) | Same IR PR |
+| FY2026 diluted EPS (GAAP) | $17.95 (+32%) | Same IR PR |
+| Primary 10-K URL (not fetched live) | https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm | |
+| IR earnings page | https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast | |
+
+Confidence: **Med-High** for IR press-release figures (official company disclosure); **Med** for 10-K accession metadata (WebSearch citation of EDGAR index; raw EDGAR 403 from this box).
+</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP2 — EQIX_SUMMARY.md</summary>
+      <pre class='artifact'># EQIX SEC filings summary
+
+| Item | Value | Source |
+|---|---|---|
+| CIK | 0001101239 | Public / known_ciks.json |
+| Live EDGAR | BLOCKED (403) | BLOCKER.md |
+| IR SEC filings URL tried | investor.equinix.com/.../sec-filings | HTTP 404 on direct path; page body saved as EQIX_IR.html (likely soft-404/SPA) |
+| Live Yahoo chart price | see EQIX_yahoo_chart.json | Fetched 2026-10-02 AWST |
+
+Thesis use: liquid data-center REIT/operator for AI/power theme; fundamentals detail incomplete without EDGAR — confidence on filings **Low** until EDGAR reachable. Price evidence only from Yahoo.
+</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP3 13f — BRK_Q2_2026_SUMMARY.md (secondary)</summary>
+      <pre class='artifact'># Berkshire Hathaway 13F-HR — Q2 2026 (secondary sources; EDGAR blocked)
+
+**Filing entity:** Berkshire Hathaway Inc — CIK 0001067983  
+**Period ended:** 2026-06-30  
+**Filed / accepted:** ~2026-08-14 (PortfolioSavvy: accepted 14 Aug 2026 16:05:04 UTC)  
+**Accession (cited):** 0001193125-26-352200  
+**Reported 13F value:** $299,253,556,246  
+**Positions (parsed equities):** ~29  
+
+## Top holdings (values from 13f.finance / last10k / PortfolioSavvy aggregators)
+
+| Ticker | Approx value | ~% port | Notes |
+|---|---|---|---|
+| AAPL | ~$66.0B | ~22.0% | Held flat shares ~227.92M |
+| AXP | ~$51.3B | ~17.1% | Held |
+| KO | ~$32.5B | ~10.9% | Held ~400M shares |
+| GOOGL | ~$28.2B | ~9.4% | ADDED (~+45% shares) |
+| BAC | ~$27.5B | ~9.2% | REDUCED (~-6% shares) |
+| CVX | ~$14.0B | ~4.7% | Held |
+| OXY | ~$12.9B | ~4.3% | Held |
+| CB | ~$11.7B | ~3.9% | Held |
+| GOOG | ~$9.6B | ~3.2% | ADDED sharply |
+
+Notable: net buyer in Q2; large Alphabet add (Forbes / 13f.finance). Exited STZ; small new DHI.
+
+## Sources (secondary — do not treat as primary EDGAR bytes)
+- https://13f.finance/fund/berkshire-hathaway
+- https://last10k.com/sec-filings/1067983/0001193125-26-352200.htm
+- https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026
+- https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/
+- SEC form URL (blocked from box): https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/
+
+**Confidence:** Med for portfolio total ($299.25B matches across aggregators + SEC summary page snippet via WebSearch). Med for top weights. Live CSV from skill scripts not obtainable (EDGAR 403).
+
+## Implication for spot-buy screen
+Supports LONG quality bias toward AAPL / KO / GOOGL and MEDIUM GOOGL (fresh institution
+… [truncated — full file in repo]</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP4 ratios — RATIOS.md (NVDA + MSFT only)</summary>
+      <pre class='artifact'># Financial statement ratios (public/fetched data only)
+
+Generated: 2026-10-02 AWST. Live prices from Yahoo Finance chart API.
+No invented filings. EQIX omitted (insufficient verified fundamentals without EDGAR).
+
+## NVDA
+- **price_usd**: 230.44
+- **shares_b**: 24.1
+- **mkt_cap_b**: 5553.6
+- **revenue_b**: 215.9
+- **net_income_b**: 120.1
+- **equity_b**: 157.3
+- **assets_b**: 206.8
+- **net_margin**: 0.5563
+- **roe**: 0.7635
+- **pe_ttm_approx**: 46.24
+- **ps**: 25.72
+- **sources**: [&#x27;edgar.tools 10-K snapshot&#x27;, &#x27;Yahoo chart&#x27;, &#x27;NVDA 10-Q Q2 rev table via WebSearch&#x27;]
+- **confidence**: Med (price High/Yahoo; FY figures Med secondary; shares Med)
+
+## MSFT
+- **price_usd**: 514.01
+- **shares_b**: 7.451
+- **mkt_cap_b**: 3830.0
+- **revenue_b**: 331.8
+- **net_income_b**: 133.749
+- **op_income_b**: 155.2
+- **eps_diluted**: 17.95
+- **net_margin**: 0.4031
+- **op_margin**: 0.4678
+- **pe_ttm_approx**: 28.64
+- **ps**: 11.54
+- **sources**: [&#x27;Microsoft IR FY26 Q4 PR&#x27;, &#x27;Yahoo chart&#x27;, &#x27;EDGAR accession via WebSearch&#x27;]
+- **confidence**: Med-High (IR official; price High/Yahoo; share count derived)
+</pre>
+    </details>
+    <details class="pipe">
+      <summary>STEP5 models — SCENARIO_DCF.md (DCF incomplete)</summary>
+      <pre class='artifact'># Creating-financial-models: scenario / reverse-earnings table
+
+Illustrative scenario table only — not advice. Inputs from IR/secondary + Yahoo prices. Missing: audited FCF bridge, precise diluted shares from 10-K XBRL, WACC, buybacks.
+
+## Missing inputs
+- Live EDGAR XBRL cash flow
+- Authoritative diluted share count
+- Consensus WACC
+- Segment FCF
+
+## MSFT scenarios (5y)
+
+- **Bear**: NI CAGR 8%, exit P/E 22 → PT $580.24 (+12.9%), prob 0.25
+- **Base**: NI CAGR 12%, exit P/E 28 → PT $885.75 (+72.3%), prob 0.5
+- **Bull**: NI CAGR 16%, exit P/E 35 → PT $1319.54 (+156.7%), prob 0.25
+
+Probability-weighted upside (illustrative): **78.5%**
+
+## NVDA scenarios (5y, EPS approx)
+
+- **Bear**: EPS CAGR 10%, exit P/E 25 → PT $200.65 (-12.9%)
+- **Base**: EPS CAGR 20%, exit P/E 35 → PT $434.01 (+88.3%)
+- **Bull**: EPS CAGR 28%, exit P/E 45 → PT $770.53 (+234.4%)</pre>
+    </details>
+    <p class="muted" style="margin-top:.75rem; font-size:.85rem;">Also on disk: <code>skills/sec-filings/*_yahoo_chart.json</code>, many 39-byte EDGAR stub list/doc files, <code>research/quotes/*.json</code>, <code>research/coingecko_prices.json</code>, <code>research/picks.json</code>.</p>
+  </div>
+
+  <h2 id="gaps">Gaps + remediations</h2>
+  <div class="section-card">
+    <h3 style="margin-top:0; font-size:.95rem;">Critical gaps</h3>
+    <ol class="gap-list">
+      <li><strong>EDGAR 403</strong> — Akamai blocks sec.gov / data.sec.gov from box egress; MSFT/EQIX list/doc files are 39-byte stubs.</li>
+      <li><strong>DCF incomplete</strong> — exit-PE scenario tables only; missing FCF, WACC, XBRL diluted shares.</li>
+      <li><strong>Ratios only NVDA+MSFT</strong> — EQIX omitted; other picks have no ratio artifact.</li>
+      <li><strong>13F secondary-only</strong> — accession 0001193125-26-352200 cited; primary XML not on disk.</li>
+      <li><strong>Thin sleeves</strong> — EQIX, ASML, TSM, NEM, BHP, SOL lack company deep-dives vs MSFT/NVDA.</li>
+    </ol>
+    <h3 style="font-size:.95rem;">Recommended remediations</h3>
+    <ol class="gap-list">
+      <li>Retry EDGAR via <code>data.sec.gov</code> with declared User-Agent from non-blocked egress; persist submissions + 10-K/10-Q/XBRL.</li>
+      <li>Complete FCF/WACC DCF (or clearly keep scenarios-only and stop calling it DCF).</li>
+      <li>EQIX: deep-dive via IR PDF / 10-K once reachable; upgrade confidence only after artifacts land.</li>
+      <li>Fetch primary Berkshire 13F information table for accession 0001193125-26-352200.</li>
+      <li>Extend ratios to AAPL/GOOGL/ASML/TSM/JPM/META/NEM/BHP (or exclude with reason).</li>
+      <li>Confirm META earnings date via Meta IR before SHORT event sizing.</li>
+      <li>Deep-dive or demote ASML/TSM/NEM/BHP/SOL until primary IR/filing artifacts exist.</li>
+    </ol>
+    <h3 style="font-size:.95rem;">Per-pick audit confidence</h3>
+    <table class="conf">
+      <thead><tr><th>Ticker</th><th>Horizon</th><th>Conf</th><th>Basis</th></tr></thead>
+      <tbody>
+<tr><td>IBIT</td><td>SHORT</td><td>Med</td><td>Yahoo price + The Block ETF flow article + macro blog</td></tr>
+<tr><td>ETH</td><td>SHORT</td><td>Med</td><td>CoinGecko + Yahoo cross-check + flow/macro URLs</td></tr>
+<tr><td>SOL</td><td>SHORT</td><td>Low</td><td>CoinGecko + Bitfinex macro only</td></tr>
+<tr><td>JPM</td><td>SHORT</td><td>Med</td><td>Official IR earnings-call notice + Yahoo; no 10-Q deep dive</td></tr>
+<tr><td>META</td><td>SHORT</td><td>Med</td><td>Secondary earnings calendars + Yahoo — confirm via Meta IR</td></tr>
+<tr><td>MSFT</td><td>MEDIUM</td><td>High</td><td>IR FY2026 PR + ratios + scenario model artifacts</td></tr>
+<tr><td>GOOGL</td><td>MEDIUM</td><td>Med</td><td>BRK Q2 add in 13F summary (secondary); Yahoo price</td></tr>
+<tr><td>EQIX</td><td>MEDIUM</td><td>Low</td><td>EQIX_SUMMARY Low; IR 404; EDGAR stubs; Yahoo price only</td></tr>
+<tr><td>NVDA</td><td>MEDIUM</td><td>Med</td><td>Secondary 10-K/10-Q excerpts + ratios + scenarios (EDGAR not live)</td></tr>
+<tr><td>NEM</td><td>MEDIUM</td><td>Low</td><td>Yahoo + CMC/OCBC theme PDFs only</td></tr>
+<tr><td>ASML</td><td>LONG</td><td>Low</td><td>Yahoo + OCBC/SOXX commentary; no primary orders artifact</td></tr>
+<tr><td>TSM</td><td>LONG</td><td>Low</td><td>Yahoo + OCBC PDF; no TSMC filings in repo</td></tr>
+<tr><td>BTC</td><td>LONG</td><td>Med</td><td>CoinGecko + Yahoo + ETF flow article</td></tr>
+<tr><td>AAPL</td><td>LONG</td><td>Med</td><td>BRK 13F secondary multi-aggregator; no Apple IR deep dive in repo</td></tr>
+<tr><td>BHP</td><td>LONG</td><td>Low</td><td>Yahoo + CMC/OCBC theme PDFs only</td></tr>
+
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:.85rem; margin-top:.75rem;">Invented-data check: pass with caveats — prices match quote artifacts; NVDA FY figures and BRK weights are secondary-labeled; scenario PTs illustrative; META date unverified secondary.</p>
+  </div>
+
+  <footer id="sources">
+    <p><strong>Sources / method:</strong> analyst-kit-core → sec-filings (IR/Yahoo/WebSearch fallback) → Berkshire 13F secondary aggregators → ratios (NVDA/MSFT) → illustrative scenario models → 15 picks.
+    Primary/official links preferred when available. EDGAR blocked (see <code>skills/sec-filings/BLOCKER.md</code>).
+    Audit: <code>research/AUDIT.md</code>. Repo artifacts under <code>skills/</code> and <code>research/</code>.</p>
+    <p>Live: <a href="https://biggles10-claude.github.io/spot-buy-screen/">https://biggles10-claude.github.io/spot-buy-screen/</a> · Publisher: Biggles10-claude · Not investment advice.</p>
   </footer>
 </main>
 <script>

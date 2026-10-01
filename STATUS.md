@@ -7,3 +7,4 @@
 2026-10-02 00:23 AWST | STEP5 models: MSFT+NVDA 5y scenario earnings tables in skills/models/ (DCF incomplete — missing FCF/WACC/XBRL).
 2026-10-02 00:24 AWST | STEP6 picks+HTML: 15 picks written; index.html built.
 2026-10-02 00:26 AWST | STEP7 publish: LIVE https://biggles10-claude.github.io/spot-buy-screen/ HTTP=200 pages_status=built
+2026-10-02 07:16 AWST | STEP8 audit+board: AUDIT.md written (score 4.5/10, thorough=no, 5 critical gaps); index.html rebuilt with audit strip, confidence, pipeline log, gaps/remediations; prices preserved as-of STEP7.
