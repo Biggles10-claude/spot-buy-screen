@@ -1,0 +1,45 @@
+{
+  "as_of_awst": "2026-10-02",
+  "rows": [
+    {
+      "ticker": "NVDA",
+      "price_usd": 230.44,
+      "shares_b": 24.1,
+      "mkt_cap_b": 5553.6,
+      "revenue_b": 215.9,
+      "net_income_b": 120.1,
+      "equity_b": 157.3,
+      "assets_b": 206.8,
+      "net_margin": 0.5563,
+      "roe": 0.7635,
+      "pe_ttm_approx": 46.24,
+      "ps": 25.72,
+      "sources": [
+        "edgar.tools 10-K snapshot",
+        "Yahoo chart",
+        "NVDA 10-Q Q2 rev table via WebSearch"
+      ],
+      "confidence": "Med (price High/Yahoo; FY figures Med secondary; shares Med)"
+    },
+    {
+      "ticker": "MSFT",
+      "price_usd": 514.01,
+      "shares_b": 7.451,
+      "mkt_cap_b": 3830.0,
+      "revenue_b": 331.8,
+      "net_income_b": 133.749,
+      "op_income_b": 155.2,
+      "eps_diluted": 17.95,
+      "net_margin": 0.4031,
+      "op_margin": 0.4678,
+      "pe_ttm_approx": 28.64,
+      "ps": 11.54,
+      "sources": [
+        "Microsoft IR FY26 Q4 PR",
+        "Yahoo chart",
+        "EDGAR accession via WebSearch"
+      ],
+      "confidence": "Med-High (IR official; price High/Yahoo; share count derived)"
+    }
+  ]
+}

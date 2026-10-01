@@ -1,0 +1,13 @@
+  ! GET failed (HTTP Error 403: Forbidden): https://www.sec.gov/files/company_tickers.json
+Traceback (most recent call last):
+  File "/home/box/sand-data/workflows/sec-filings/scripts/edgar.py", line 540, in <module>
+    sys.exit(_main(sys.argv[1:]))
+             ~~~~~^^^^^^^^^^^^^^
+  File "/home/box/sand-data/workflows/sec-filings/scripts/edgar.py", line 448, in _main
+    cik, title = resolve_cik(a.identifier)
+                 ~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/box/sand-data/workflows/sec-filings/scripts/edgar.py", line 141, in resolve_cik
+    raise ValueError(
+        f"Unknown ticker {s!r}. Pass a CIK, or check company_tickers.json."
+    )
+ValueError: Unknown ticker 'NVDA'. Pass a CIK, or check company_tickers.json.

@@ -1,0 +1,443 @@
+{
+  "generated_awst": "2026-10-02",
+  "themes": [
+    {
+      "name": "AI infra / semis / power",
+      "note": "Strong capex narrative but SOXX weak Q3 \u2014 size carefully"
+    },
+    {
+      "name": "Rates path (Fed 27\u201328 Oct, RBA 4.60%)",
+      "note": "Sticky inflation; data-dependent"
+    },
+    {
+      "name": "Crypto spot ETF flows",
+      "note": "BTC streak ended 1 Oct; still structural plumbing"
+    },
+    {
+      "name": "AU resources / gold inflation hedge",
+      "note": "NEM/BHP diversifiers"
+    },
+    {
+      "name": "Quality mega-caps (Berkshire book)",
+      "note": "AAPL core; GOOGL add in Q2 2026 13F"
+    }
+  ],
+  "prices_snapshot": {
+    "IBIT": {
+      "price": 47.755,
+      "currency": "USD",
+      "yahoo_ts": 1790871851,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 47.755
+    },
+    "ETH-USD": {
+      "price": 2683.31,
+      "currency": "USD",
+      "yahoo_ts": 1790871848,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "coingecko_usd": 2683.11,
+      "display": 2683.11
+    },
+    "SOL-USD": {
+      "price": 117.36,
+      "currency": "USD",
+      "yahoo_ts": 1790871849,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "coingecko_usd": 117.35,
+      "display": 117.35
+    },
+    "JPM": {
+      "price": 330.665,
+      "currency": "USD",
+      "yahoo_ts": 1790871854,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 330.665
+    },
+    "META": {
+      "price": 728.625,
+      "currency": "USD",
+      "yahoo_ts": 1790871852,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 728.625
+    },
+    "MSFT": {
+      "price": 514.364,
+      "currency": "USD",
+      "yahoo_ts": 1790871853,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 514.364
+    },
+    "GOOGL": {
+      "price": 340.11,
+      "currency": "USD",
+      "yahoo_ts": 1790871847,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 340.11
+    },
+    "EQIX": {
+      "price": 1006.891,
+      "currency": "USD",
+      "yahoo_ts": 1790871854,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 1006.891
+    },
+    "NVDA": {
+      "price": 230.505,
+      "currency": "USD",
+      "yahoo_ts": 1790871855,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 230.505
+    },
+    "NEM": {
+      "price": 115.31,
+      "currency": "USD",
+      "yahoo_ts": 1790871848,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 115.31
+    },
+    "ASML": {
+      "price": 1803.205,
+      "currency": "USD",
+      "yahoo_ts": 1790871853,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 1803.205
+    },
+    "TSM": {
+      "price": 455.86,
+      "currency": "USD",
+      "yahoo_ts": 1790871850,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 455.86
+    },
+    "BTC-USD": {
+      "price": 84312.01,
+      "currency": "USD",
+      "yahoo_ts": 1790871852,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "coingecko_usd": 84305,
+      "display": 84305
+    },
+    "AAPL": {
+      "price": 328.173,
+      "currency": "USD",
+      "yahoo_ts": 1790871855,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 328.173
+    },
+    "BHP": {
+      "price": 83.82,
+      "currency": "USD",
+      "yahoo_ts": 1790871844,
+      "source": "Yahoo Finance chart API query1.finance.yahoo.com",
+      "display": 83.82
+    }
+  },
+  "picks": [
+    {
+      "horizon": "SHORT",
+      "ticker": "IBIT",
+      "name": "iShares Bitcoin Trust ETF",
+      "asset_class": "ETF",
+      "thesis": "U.S. spot bitcoin ETF complex just ended a nine-day ~$3.1B inflow streak with a soft outflow day, while October\u2019s Fed meeting (27\u201328 Oct) and CPI (14 Oct) dominate risk appetite. IBIT remains the most liquid listed vehicle for a tactical BTC sleeve without custody friction; use as a SHORT catalyst play on flow + rates repricing, not a multi-year conviction vehicle (use BTC spot for LONG).",
+      "risks": "ETF flow reversal; rising real yields; crypto beta to risk-off; sponsor/premium-discount noise.",
+      "invalidation": "Sustained multi-day net outflows across U.S. spot BTC ETFs alongside a decisive break of recent BTC range lows (monitor CoinGlass/The Block flow dashboards).",
+      "sizing": "1\u20132% starter (tactical)",
+      "confidence": "Med",
+      "sources": [
+        "https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384",
+        "https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/",
+        "https://query1.finance.yahoo.com/v8/finance/chart/IBIT"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 47.755,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "SHORT",
+      "ticker": "ETH",
+      "name": "Ethereum",
+      "asset_class": "crypto",
+      "thesis": "Spot ETH ETFs recently flipped from a strong inflow streak to outflows, creating a tactical window if softer inflation data eases October hike odds. ETH remains the deepest smart-contract L1 with liquid spot + ETF wrappers; SHORT horizon leans on flow + macro catalysts rather than protocol roadmap.",
+      "risks": "ETF outflow persistence; L2 fee compression narrative; correlation with BTC dumps; staking/regulatory headlines.",
+      "invalidation": "Another full week of combined U.S. spot ETH ETF net outflows with ETH underperforming BTC on a 1-week basis.",
+      "sizing": "1\u20132% starter",
+      "confidence": "Med",
+      "sources": [
+        "https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384",
+        "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
+        "https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/"
+      ],
+      "price_key": "ETH-USD",
+      "price_note": "CoinGecko",
+      "last_price": 2683.11,
+      "price_currency": "USD",
+      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)"
+    },
+    {
+      "horizon": "SHORT",
+      "ticker": "SOL",
+      "name": "Solana",
+      "asset_class": "crypto",
+      "thesis": "Major liquid L1 with high beta to crypto risk-on into October macro prints. Use only as a sized satellite to BTC/ETH for SHORT tactical exposure; liquidity is deep on major exchanges (CoinGecko tracked).",
+      "risks": "Higher drawdown vs BTC/ETH; outage/network incident risk; thinner institutional wrapper vs BTC/ETH ETFs.",
+      "invalidation": "Break of multi-week support with BTC stable (idiosyncratic underperformance >15% vs BTC over 2 weeks) or major network halt headlines from official Solana status channels.",
+      "sizing": "0.5\u20131.5% speculative sleeve",
+      "confidence": "Low",
+      "sources": [
+        "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd",
+        "https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/"
+      ],
+      "price_key": "SOL-USD",
+      "price_note": "CoinGecko",
+      "last_price": 117.35,
+      "price_currency": "USD",
+      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)"
+    },
+    {
+      "horizon": "SHORT",
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "asset_class": "stock",
+      "thesis": "Official IR: Q3 2026 results due ~7:00 a.m. ET Tuesday 13 Oct 2026 with call at 8:30 a.m. ET \u2014 a near-dated catalyst into bank NII/credit quality debate as rates stay elevated (RBA recently at 4.60%; Fed decision later in month). Liquid mega-cap financial for a SHORT event-driven sleeve.",
+      "risks": "Credit costs; deposit betas; trading revenue miss; post-earnings gap risk.",
+      "invalidation": "Material guidance cut on NII or sharp rise in credit costs on the 13 Oct release vs prior quarter trajectory (read the IR release, not headlines alone).",
+      "sizing": "2\u20133% starter",
+      "confidence": "Med",
+      "sources": [
+        "https://www.jpmorganchase.com/ir/news/2026/jpmc-to-host-third-quarter-2026-earnings-call",
+        "https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings",
+        "https://query1.finance.yahoo.com/v8/finance/chart/JPM"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 330.665,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "SHORT",
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "asset_class": "stock",
+      "thesis": "Next report clustered late October (calendars cite ~27\u201328 Oct) alongside FOMC \u2014 a high-beta AI/ads print after a Q2 miss left a lower bar. Liquid mega-cap for SHORT catalyst trading; size for gap risk.",
+      "risks": "Ad guidance miss; AI capex skepticism; regulatory; calendar date variance across vendors.",
+      "invalidation": "Confirm exact date via Meta IR closer to print; thesis voids if report slips past early November without a new confirmed date, or if pre-announcement warns on ads.",
+      "sizing": "1.5\u20133% starter",
+      "confidence": "Med",
+      "sources": [
+        "https://www.fxempire.com/stocks/meta/earnings",
+        "https://investingcalendar.com/country/united-states/earnings",
+        "https://query1.finance.yahoo.com/v8/finance/chart/META"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 728.625,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "MEDIUM",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "asset_class": "stock",
+      "thesis": "FY2026 IR results: revenue $331.8B (+18%), operating income $155.2B, GAAP NI $133.7B, diluted EPS $17.95. Cloud/AI capex cycle remains the structural bid even as rates stay sticky. Our illustrative 5y scenario table (skills/models) shows base-case earnings-power upside if mid-teens growth persists \u2014 MEDIUM horizon to let Azure/AI monetization compound past October macro noise.",
+      "risks": "Capex ROI skepticism; competition; multiple compression if real yields stay elevated.",
+      "invalidation": "Two consecutive quarters of Intelligent Cloud growth decelerating sharply below mid-teens without offsetting margin expansion (check future IR releases).",
+      "sizing": "3\u20135% core",
+      "confidence": "High",
+      "sources": [
+        "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
+        "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "https://query1.finance.yahoo.com/v8/finance/chart/MSFT"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 514.364,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "MEDIUM",
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc. Class A",
+      "asset_class": "stock",
+      "thesis": "Berkshire Q2 2026 13F (filed ~14 Aug 2026) showed a large add to Alphabet (GOOGL/GOOG), with reportable portfolio ~$299.25B. Search/YouTube/Cloud cash engine plus AI distribution is a MEDIUM-quality compounder with fresh mega-manager sponsorship \u2014 useful diversification vs pure semis.",
+      "risks": "Antitrust remedies; Search disruption from AI answers; ad cyclicality; 13F is lagged.",
+      "invalidation": "Sustained Search revenue decline in consecutive 10-Qs or adverse final antitrust remedy that structurally caps Chrome/Search distribution (watch DOJ case outcomes / 8-Ks).",
+      "sizing": "2\u20134%",
+      "confidence": "Med",
+      "sources": [
+        "https://13f.finance/fund/berkshire-hathaway",
+        "https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026",
+        "https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 340.11,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "MEDIUM",
+      "ticker": "EQIX",
+      "name": "Equinix, Inc.",
+      "asset_class": "stock",
+      "thesis": "Listed data-center platform exposed to AI/cloud interconnection demand called out in Oct 2026 AU/global digital-infra commentary. Liquid large-cap way to own power/space scarcity without single-tenant hyperscale idiosyncratic risk. Fundamentals deep-dive limited by EDGAR block \u2014 treat as theme sleeve with Med/Low filing confidence.",
+      "risks": "Rate-sensitive REIT-like multiple; power availability; customer concentration; incomplete filing verify from this box.",
+      "invalidation": "Two quarters of deteriorating bookings/utilization commentary on earnings calls or equity raise at punitive terms.",
+      "sizing": "1\u20133%",
+      "confidence": "Low",
+      "sources": [
+        "https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings",
+        "https://query1.finance.yahoo.com/v8/finance/chart/EQIX",
+        "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 1006.891,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "MEDIUM",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "asset_class": "stock",
+      "thesis": "Verified growth machine: FY2026 revenue ~$215.9B / NI ~$120.1B (secondary 10-K snapshot); Q2 (ended 26 Jul 2026) revenue $96.2B vs $46.7B prior-year quarter (10-Q table excerpt). MEDIUM horizon to ride AI compute demand while acknowledging SOXX\u2019s weak Q3 and valuation/\u201cpower-hungry chip\u201d skepticism. Size below MSFT given multiple risk.",
+      "risks": "Export controls; customer concentration; multiple derating; competing ASIC/custom silicon.",
+      "invalidation": "Quarterly revenue decline QoQ (ex-seasonality) or data-center gross margin collapse disclosed in next 10-Q/earnings 8-K.",
+      "sizing": "2\u20134%",
+      "confidence": "Med",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+        "https://app.edgar.tools/filing/1045810/0001045810-26-000021",
+        "https://investor.nvidia.com/financial-info/sec-filings/default.aspx"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 230.505,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "MEDIUM",
+      "ticker": "NEM",
+      "name": "Newmont Corporation",
+      "asset_class": "stock",
+      "thesis": "Liquid gold major as a MEDIUM inflation/geopolitical hedge while RBA cash rate sits at 4.60% (Sep 2026 hike) and global energy/geopolitics remain choppy. Diversifies the board away from pure tech/crypto beta.",
+      "risks": "Gold price drawdown; cost inflation at mines; jurisdictional risk; opportunity cost if real yields spike.",
+      "invalidation": "Sustained break in gold\u2019s medium-term uptrend with rising real yields (monitor real 10y) plus company guidance cut on AISC.",
+      "sizing": "1\u20133%",
+      "confidence": "Med",
+      "sources": [
+        "https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings",
+        "https://query1.finance.yahoo.com/v8/finance/chart/NEM",
+        "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 115.31,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "LONG",
+      "ticker": "ASML",
+      "name": "ASML Holding N.V.",
+      "asset_class": "stock",
+      "thesis": "EUV lithography bottleneck for advanced nodes \u2014 structural LONG pick on AI/semicap cycle despite near-term SOXX volatility. Liquid ADR; thesis is multi-year capacity/tool demand, not October trading.",
+      "risks": "Export controls to China; order cyclicality; EUR/USD; customer capex pauses.",
+      "invalidation": "Multi-quarter booked backlog collapse or credible competing EUV alternative reaching HVM (monitor ASML order/bookings releases).",
+      "sizing": "2\u20134%",
+      "confidence": "Med",
+      "sources": [
+        "https://query1.finance.yahoo.com/v8/finance/chart/ASML",
+        "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf",
+        "https://stocktwits.com/news-articles/markets/equity/soxx-worst-quarter-over-year-michael-burry-1880-ai-power-chip-race/cZDixccRBi9"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 1803.205,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "LONG",
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company",
+      "asset_class": "stock",
+      "thesis": "Foundry backbone for leading-edge AI accelerators \u2014 LONG structural compounder paired with ASML. Liquid ADR; geopolitics is the permanent risk premium.",
+      "risks": "Taiwan geopolitics; customer concentration (NVDA/Apple ecosystem); capex intensity; FX.",
+      "invalidation": "Sustained utilization collapse in advanced nodes or material escalation risk that impairs fab ops (company disclosures / credible government advisories).",
+      "sizing": "2\u20134%",
+      "confidence": "Med",
+      "sources": [
+        "https://query1.finance.yahoo.com/v8/finance/chart/TSM",
+        "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 455.86,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "LONG",
+      "ticker": "BTC",
+      "name": "Bitcoin",
+      "asset_class": "crypto",
+      "thesis": "Multi-year monetary/network asset with U.S. spot ETF plumbing now mature; October flow noise is SHORT/MEDIUM, but LONG thesis is structural adoption + scarcity. Prefer spot (or IBIT for brokerage convenience) with small core size given volatility.",
+      "risks": "Drawdowns >50% historically possible; regulation; ETF flow regimes; opportunity cost vs equities in high real-rate regimes.",
+      "invalidation": "Structural ban or sustained ETF AUM collapse with loss of institutional access rails (not a single down week).",
+      "sizing": "2\u20135% core crypto",
+      "confidence": "Med",
+      "sources": [
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
+        "https://www.theblock.co/news/markets/2026-10-01-bitcoin-etfs-9-day-3-billion-inflow-streak-comes-to-an-end-as-149-million-exits-the-funds-417384",
+        "https://blog.bitfinex.com/bitfinex-alpha/october-2026-macro-catalyst-outlook/"
+      ],
+      "price_key": "BTC-USD",
+      "price_note": "CoinGecko",
+      "last_price": 84305,
+      "price_currency": "USD",
+      "price_source": "CoinGecko simple/price API (+ Yahoo cross-check available)"
+    },
+    {
+      "horizon": "LONG",
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "asset_class": "stock",
+      "thesis": "Berkshire\u2019s largest 13F line (~$66B / ~22% of reportable book in Q2 2026) anchors a LONG quality compounder with fortress balance sheet and services mix. Lower AI-capex beta than NVDA; suitable multi-year core.",
+      "risks": "China demand; regulatory App Store; innovation cadence; rich absolute multiple.",
+      "invalidation": "Services growth turning negative YoY for two consecutive quarters without buyback/capital-return offset thesis change.",
+      "sizing": "3\u20135%",
+      "confidence": "High",
+      "sources": [
+        "https://13f.finance/fund/berkshire-hathaway",
+        "https://portfoliosavvy.com/portfolio/000119312526352200-berkshire-hathaway-inc-q2-2026",
+        "https://query1.finance.yahoo.com/v8/finance/chart/AAPL"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 328.173,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    },
+    {
+      "horizon": "LONG",
+      "ticker": "BHP",
+      "name": "BHP Group Limited",
+      "asset_class": "stock",
+      "thesis": "Liquid diversified miner (NYSE ADR / dual-listed heritage) for LONG exposure to copper/iron ore and energy-transition materials alongside AU macro. Diversifies tech/crypto-heavy board; commodity cycles require patience.",
+      "risks": "China steel demand; commodity price cycles; operational incidents; AUD/USD.",
+      "invalidation": "Multi-year copper/iron price regime break with company cutting growth capex and dividends simultaneously (read BHP results releases).",
+      "sizing": "2\u20134%",
+      "confidence": "Med",
+      "sources": [
+        "https://query1.finance.yahoo.com/v8/finance/chart/BHP",
+        "https://www.cmcmarkets.com/en-au/market-news/monthly-outlook-firmus-inflation-earnings",
+        "https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/research%20monitor/research%20monitor%20(1oct%2026).pdf"
+      ],
+      "price_note": "Yahoo",
+      "last_price": 83.82,
+      "price_currency": "USD",
+      "price_source": "Yahoo Finance chart API query1.finance.yahoo.com"
+    }
+  ],
+  "mix": {
+    "equities_etf": 11,
+    "crypto": 4,
+    "note": "~73% equity/ETF / ~27% crypto across 15 picks"
+  }
+}

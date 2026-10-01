@@ -1,0 +1,80 @@
+{
+  "disclaimer": "Illustrative scenario table only \u2014 not advice. Inputs from IR/secondary + Yahoo prices. Missing: audited FCF bridge, precise diluted shares from 10-K XBRL, WACC, buybacks.",
+  "missing_inputs": [
+    "Live EDGAR XBRL cash flow",
+    "Authoritative diluted share count",
+    "Consensus WACC",
+    "Segment FCF"
+  ],
+  "msft": {
+    "price_yahoo": 514.01,
+    "eps_fy2026": 17.95,
+    "scenarios": [
+      {
+        "name": "Bear",
+        "ni_cagr": 0.08,
+        "exit_pe": 22,
+        "prob": 0.25,
+        "ni_y5_b": 196.5,
+        "eps_y5": 26.37,
+        "price_target": 580.24,
+        "upside_pct": 12.9
+      },
+      {
+        "name": "Base",
+        "ni_cagr": 0.12,
+        "exit_pe": 28,
+        "prob": 0.5,
+        "ni_y5_b": 235.7,
+        "eps_y5": 31.63,
+        "price_target": 885.75,
+        "upside_pct": 72.3
+      },
+      {
+        "name": "Bull",
+        "ni_cagr": 0.16,
+        "exit_pe": 35,
+        "prob": 0.25,
+        "ni_y5_b": 280.9,
+        "eps_y5": 37.7,
+        "price_target": 1319.54,
+        "upside_pct": 156.7
+      }
+    ],
+    "prob_weighted_upside_pct": 78.5
+  },
+  "nvda": {
+    "price_yahoo": 230.44,
+    "eps_fy2026_approx": 4.98,
+    "note": "EPS approx = NI/shares from secondary",
+    "scenarios": [
+      {
+        "name": "Bear",
+        "eps_cagr": 0.1,
+        "exit_pe": 25,
+        "prob": 0.3,
+        "eps_y5": 8.03,
+        "price_target": 200.65,
+        "upside_pct": -12.9
+      },
+      {
+        "name": "Base",
+        "eps_cagr": 0.2,
+        "exit_pe": 35,
+        "prob": 0.45,
+        "eps_y5": 12.4,
+        "price_target": 434.01,
+        "upside_pct": 88.3
+      },
+      {
+        "name": "Bull",
+        "eps_cagr": 0.28,
+        "exit_pe": 45,
+        "prob": 0.25,
+        "eps_y5": 17.12,
+        "price_target": 770.53,
+        "upside_pct": 234.4
+      }
+    ]
+  }
+}

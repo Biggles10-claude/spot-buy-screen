@@ -1,0 +1,7 @@
+{
+  "NVDA": {"cik": "0001045810", "name": "NVIDIA CORP"},
+  "MSFT": {"cik": "0000789019", "name": "MICROSOFT CORP"},
+  "EQIX": {"cik": "0001101239", "name": "EQUINIX INC"},
+  "BRK-B": {"cik": "0001067983", "name": "BERKSHIRE HATHAWAY INC"},
+  "note": "CIKs are well-known public identifiers; live EDGAR fetch blocked from this egress."
+}
